@@ -8,12 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-legal">
 
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader__logo"><span class="logo-mark"></span><span>Pole<b>POS</b></span></div>
+    <div class="loader__logo"><img src="assets/logo.png" alt="" class="logo-mark" width="34" height="34"><span>Pole<b>POS</b></span></div>
     <div class="loader__bar"><span></span></div>
   </div>
 
@@ -22,7 +24,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="index.html" class="logo" aria-label="Pole POS — página inicial">
-        <span class="logo-mark"></span>
+        <img src="assets/logo.png" alt="" class="logo-mark" width="34" height="34">
         <span>Pole<b>POS</b></span>
       </a>
       <nav class="nav" id="nav" aria-label="Navegação principal">
@@ -74,10 +76,10 @@
         <article class="legal__content reveal" data-delay="100">
           <section id="controlador">
             <h2><span class="num">1</span> Quem somos</h2>
-            <p>O <strong>Pole POS</strong> é um sistema de ponto de venda (PDV) e gestão para lojas de conveniência, mercearias e lojas de posto. Para os fins da LGPD, o Pole POS atua como:</p>
+            <p>O <strong>Pole POS</strong> é um sistema de ponto de venda (PDV) e gestão para distribuidoras de bebidas, depósitos e disk-bebidas. Para os fins da LGPD, o Pole POS atua como:</p>
             <ul>
               <li><strong>Controlador</strong> dos dados de visitantes do site, leads e dos responsáveis pelas contas dos clientes;</li>
-              <li><strong>Operador</strong> dos dados que os lojistas inserem no sistema sobre seus próprios clientes e operações (por exemplo, CPF na nota), tratando-os conforme as instruções do lojista.</li>
+              <li><strong>Operador</strong> dos dados que as distribuidoras inserem no sistema sobre seus próprios clientes e operações (por exemplo, CPF ou CNPJ na nota, endereço de entrega e saldo de vasilhames), tratando-os conforme as instruções da distribuidora.</li>
             </ul>
           </section>
 
@@ -87,16 +89,17 @@
             <ul>
               <li>Nome, e-mail e telefone/WhatsApp ao solicitar o teste grátis ou falar com vendas;</li>
               <li>Razão social, CNPJ, endereço e dados fiscais do estabelecimento ao contratar;</li>
-              <li>Dados de operadores do caixa (nome e login) cadastrados pelo lojista.</li>
+              <li>Dados de operadores de caixa, vendedores externos e entregadores (nome e login) cadastrados pela distribuidora.</li>
             </ul>
             <h3>Dados coletados automaticamente</h3>
             <ul>
               <li>Endereço IP, tipo de navegador, dispositivo e páginas visitadas;</li>
               <li>Registros de acesso ao sistema (data, hora e IP), conforme exigido pelo Marco Civil da Internet;</li>
-              <li>Dados técnicos dos terminais POS (modelo, versão do software e status de conexão).</li>
+              <li>Dados técnicos dos terminais POS (modelo, versão do software e status de conexão);</li>
+              <li>Localização do aparelho do entregador <strong>somente durante uma entrega em andamento</strong>, quando o app de entregas está em uso, para mostrar a rota e o status do pedido.</li>
             </ul>
-            <h3>Dados das operações da loja</h3>
-            <p>Vendas, produtos, estoque e documentos fiscais registrados no sistema pertencem ao lojista. Eventualmente podem incluir o CPF do consumidor final, quando informado na nota fiscal.</p>
+            <h3>Dados das operações da distribuidora</h3>
+            <p>Vendas, produtos, estoque e documentos fiscais registrados no sistema pertencem à distribuidora. Podem incluir dados dos clientes dela, como nome, telefone, endereço de entrega, CPF/CNPJ informado na nota, limite de crédito e saldo de vasilhames.</p>
           </section>
 
           <section id="finalidade">
@@ -106,7 +109,8 @@
                 <thead><tr><th>Finalidade</th><th>Base legal (LGPD)</th></tr></thead>
                 <tbody>
                   <tr><td>Prestar o serviço de PDV, estoque e relatórios</td><td>Execução de contrato (art. 7º, V)</td></tr>
-                  <tr><td>Emitir e armazenar documentos fiscais (NFC-e/SAT)</td><td>Cumprimento de obrigação legal (art. 7º, II)</td></tr>
+                  <tr><td>Mostrar rota e status das entregas em andamento</td><td>Execução de contrato (art. 7º, V)</td></tr>
+                  <tr><td>Emitir e armazenar documentos fiscais (NFC-e/NF-e)</td><td>Cumprimento de obrigação legal (art. 7º, II)</td></tr>
                   <tr><td>Responder solicitações de contato e teste grátis</td><td>Procedimentos preliminares a contrato (art. 7º, V)</td></tr>
                   <tr><td>Prevenir fraudes e garantir a segurança da conta</td><td>Legítimo interesse (art. 7º, IX)</td></tr>
                   <tr><td>Enviar novidades e conteúdos de marketing</td><td>Consentimento (art. 7º, I), revogável a qualquer momento</td></tr>
@@ -124,7 +128,7 @@
               <li><strong>Provedores de nuvem</strong> que hospedam nossa infraestrutura;</li>
               <li><strong>Adquirentes e subadquirentes</strong> responsáveis por processar os pagamentos na maquininha;</li>
               <li><strong>Secretarias da Fazenda (SEFAZ)</strong> para autorização de documentos fiscais;</li>
-              <li><strong>Contador do lojista</strong>, quando o próprio lojista ativa o envio automático de XMLs;</li>
+              <li><strong>Contador da distribuidora</strong>, quando a própria distribuidora ativa o envio automático de XMLs;</li>
               <li><strong>Autoridades públicas</strong>, mediante ordem judicial ou exigência legal.</li>
             </ul>
             <p>Alguns fornecedores podem armazenar dados fora do Brasil. Nesses casos, adotamos as salvaguardas previstas no art. 33 da LGPD, como cláusulas contratuais padrão.</p>
@@ -170,6 +174,7 @@
             <ul>
               <li><strong>Documentos fiscais:</strong> pelo prazo exigido pela legislação tributária (em regra, 5 anos);</li>
               <li><strong>Registros de acesso:</strong> 6 meses, conforme o Marco Civil da Internet;</li>
+              <li><strong>Localização das entregas:</strong> até 90 dias após a entrega, para resolver reclamações, e depois é apagada;</li>
               <li><strong>Dados da conta:</strong> enquanto o contrato estiver ativo e, após o encerramento, pelo prazo necessário para cumprir obrigações legais;</li>
               <li><strong>Leads e contatos:</strong> até 2 anos sem interação, ou até você pedir a exclusão.</li>
             </ul>
@@ -186,7 +191,7 @@
               <div class="right-card"><strong>Informação sobre compartilhamento</strong><p>Saber com quais entidades compartilhamos seus dados.</p></div>
               <div class="right-card"><strong>Revogação do consentimento</strong><p>Retirar o consentimento a qualquer momento, sem custo.</p></div>
             </div>
-            <p style="margin-top:16px">Se você é consumidor de uma loja que usa o Pole POS, envie sua solicitação diretamente ao estabelecimento — nós o apoiaremos no atendimento. Você também pode apresentar reclamação à ANPD.</p>
+            <p style="margin-top:16px">Se você é cliente de uma distribuidora que usa o Pole POS, envie sua solicitação diretamente ao estabelecimento — nós o apoiaremos no atendimento. Você também pode apresentar reclamação à ANPD.</p>
           </section>
 
           <section id="contato-dpo">
@@ -209,8 +214,8 @@
   <footer class="footer">
     <div class="container footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="logo logo--light"><span class="logo-mark"></span><span>Pole<b>POS</b></span></a>
-        <p>Sistema de PDV e gestão para conveniências, mercearias e lojas de posto.</p>
+        <a href="index.html" class="logo logo--light"><img src="assets/logo.png" alt="" class="logo-mark" width="34" height="34"><span>Pole<b>POS</b></span></a>
+        <p>Sistema de PDV e gestão para distribuidoras de bebidas, depósitos e disk-bebidas.</p>
       </div>
       <div>
         <h4>Produto</h4>
@@ -227,7 +232,7 @@
     </div>
     <div class="container footer__bottom">
       <span>© <span id="year"></span> Pole POS. Todos os direitos reservados.</span>
-      <span>Feito com cuidado para o varejo brasileiro.</span>
+      <span>Venda de bebidas alcoólicas proibida para menores de 18 anos. Beba com moderação.</span>
     </div>
   </footer>
 

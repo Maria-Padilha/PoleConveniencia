@@ -179,21 +179,21 @@
   const dashData = {
     vendas: {
       title: 'Vendas por hora',
-      bars: [22, 35, 48, 40, 62, 88, 74, 56, 66, 92, 80, 58],
-      labels: ['7h', '8h', '9h', '10h', '11h', '12h', '13h', '14h', '15h', '16h', '17h', '18h'],
-      kpis: [['Faturamento', 'R$ 48.920', '+12%', true], ['Ticket médio', 'R$ 27,40', '+4%', true], ['Transações', '1.786', '+9%', true]]
+      bars: [18, 24, 30, 34, 40, 46, 55, 68, 84, 96, 90, 72],
+      labels: ['10h', '11h', '12h', '13h', '14h', '15h', '16h', '17h', '18h', '19h', '20h', '21h'],
+      kpis: [['Faturamento', 'R$ 142.380', '+14%', true], ['Ticket médio', 'R$ 96,50', '+6%', true], ['Pedidos', '1.476', '+11%', true]]
     },
     estoque: {
       title: 'Giro por categoria',
-      bars: [90, 72, 64, 55, 48, 40, 34, 28, 22, 18, 14, 10],
-      labels: ['Beb', 'Sal', 'Doc', 'Cig', 'Caf', 'Lat', 'Pad', 'Hig', 'Con', 'Gel', 'Aut', 'Out'],
-      kpis: [['Itens ativos', '2.348', '+56', true], ['Ruptura', '1,8%', '-0,6%', true], ['Validade 7d', '23 itens', '-12%', true]]
+      bars: [96, 78, 70, 58, 50, 42, 36, 30, 24, 20, 15, 10],
+      labels: ['Cerv', 'Gelo', 'Refri', 'Água', 'Energ', 'Dest', 'Chope', 'Suco', 'Vinho', 'Carv', 'Isot', 'Out'],
+      kpis: [['Fardos em estoque', '3.912', '+240', true], ['Ruptura', '1,4%', '-0,8%', true], ['Cascos a receber', '486', '-9%', true]]
     },
-    financeiro: {
-      title: 'Receita por semana',
-      bars: [45, 52, 49, 60, 58, 66, 71, 69, 78, 82, 86, 94],
-      labels: ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12'],
-      kpis: [['Margem bruta', '31,6%', '+2,1%', true], ['A receber', 'R$ 12.480', '+8%', true], ['Taxas', 'R$ 1.204', '-5%', true]]
+    entregas: {
+      title: 'Entregas por dia',
+      bars: [38, 34, 40, 46, 72, 100, 82, 36, 35, 44, 50, 76],
+      labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex'],
+      kpis: [['Entregas hoje', '214', '+16%', true], ['Tempo médio', '28 min', '-4 min', true], ['Na rua agora', '9 motos', '+2', true]]
     }
   };
 
