@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pole POS — Sistema de PDV para Conveniências</title>
+  <meta name="description" content="Pole POS: sistema de controle de vendas, estoque e pagamentos para lojas de conveniência e mercearias. Maquininha integrada, relatórios em tempo real e gestão na palma da mão.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__logo">
+      <span class="logo-mark"></span>
+      <span>Pole<b>POS</b></span>
+    </div>
+    <div class="loader__bar"><span></span></div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo" aria-label="Pole POS — início">
+        <span class="logo-mark"></span>
+        <span>Pole<b>POS</b></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <a href="#recursos" class="nav__link">Recursos</a>
+        <a href="#maquininhas" class="nav__link">Maquininhas</a>
+        <a href="#como-funciona" class="nav__link">Como funciona</a>
+        <a href="#planos" class="nav__link">Planos</a>
+        <a href="#faq" class="nav__link">FAQ</a>
+        <a href="#contato" class="btn btn--primary nav__cta">Teste grátis</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg">
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="grid-lines"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="badge reveal" data-delay="100">
+            <span class="badge__dot"></span> Novo: Pix integrado na maquininha
+          </span>
+          <h1 class="hero__title reveal" data-delay="200">
+            O caixa da sua conveniência,
+            <span class="text-gradient">rápido como seu cliente</span>
+            precisa.
+          </h1>
+          <p class="hero__text reveal" data-delay="300">
+            Vendas, estoque, maquininha e financeiro em um só sistema. O Pole POS foi feito para conveniências, mercearias e lojas de posto que não podem parar — nem às 3h da manhã.
+          </p>
+          <div class="hero__actions reveal" data-delay="400">
+            <a href="#contato" class="btn btn--primary btn--lg">
+              Começar teste de 14 dias
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#como-funciona" class="btn btn--ghost btn--lg">
+              <span class="play-icon"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+              Ver como funciona
+            </a>
+          </div>
+          <ul class="hero__trust reveal" data-delay="500">
+            <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Sem fidelidade</li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Funciona offline</li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Emissão de NFC-e</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal reveal--right" data-delay="300">
+          <div class="hero__img-main tilt">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1100&q=80&auto=format&fit=crop" alt="Atendente finalizando venda em terminal POS no balcão de uma loja">
+          </div>
+          <div class="hero__img-small parallax" data-speed="0.08">
+            <img src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=600&q=80&auto=format&fit=crop" alt="Cliente pagando por aproximação com celular na maquininha">
+          </div>
+
+          <div class="float-card float-card--sales parallax" data-speed="-0.06">
+            <div class="float-card__icon float-card__icon--green">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 17l6-6 4 4 8-8M14 7h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <small>Vendas hoje</small>
+              <strong>R$ <span class="counter" data-target="8742" data-format="money">0</span></strong>
+              <em class="up">+18,4%</em>
+            </div>
+          </div>
+
+          <div class="float-card float-card--pay parallax" data-speed="0.1">
+            <div class="float-card__icon float-card__icon--blue">
+              <svg viewBox="0 0 24 24" width="20" height="20"><rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 10h20" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <div>
+              <small>Pagamento aprovado</small>
+              <strong>Pix · R$ 23,90</strong>
+            </div>
+            <span class="pulse-dot"></span>
+          </div>
+
+          <div class="float-card float-card--stock parallax" data-speed="-0.12">
+            <small>Estoque baixo</small>
+            <strong>Energético 473ml</strong>
+            <div class="mini-bar"><span style="--w: 18%"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#logos" class="scroll-hint" aria-label="Rolar para baixo"><span></span></a>
+    </section>
+
+    <!-- LOGOS / MARQUEE -->
+    <section class="logos" id="logos">
+      <p class="logos__title">Mais de <strong>4.200 conveniências</strong> já vendem com o Pole POS</p>
+      <div class="marquee">
+        <div class="marquee__track">
+          <span>Conveniência 24h</span><span>Posto Estrela</span><span>Mercadinho Bom Preço</span><span>AmPm Express</span><span>Empório Central</span><span>Loja Parada Certa</span><span>Mercearia da Vila</span><span>Rede Rota Sul</span>
+          <span>Conveniência 24h</span><span>Posto Estrela</span><span>Mercadinho Bom Preço</span><span>AmPm Express</span><span>Empório Central</span><span>Loja Parada Certa</span><span>Mercearia da Vila</span><span>Rede Rota Sul</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECURSOS -->
+    <section class="section features" id="recursos">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Recursos</span>
+          <h2 class="section__title">Tudo o que o seu balcão precisa, <span class="text-gradient">sem complicação</span></h2>
+          <p class="section__text">Do bipe do código de barras ao fechamento do caixa, cada detalhe foi pensado para o ritmo acelerado de uma conveniência.</p>
+        </div>
+
+        <div class="features__grid">
+          <article class="feature-card feature-card--big reveal">
+            <div class="feature-card__img">
+              <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=900&q=80&auto=format&fit=crop" alt="Atendente usando tablet como frente de caixa" loading="lazy">
+            </div>
+            <div class="feature-card__body">
+              <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 5h2l2 11h11l2-8H6" /><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg></div>
+              <h3>Frente de caixa ultrarrápida</h3>
+              <p>Venda em 3 toques. Leitor de código de barras, atalhos de teclado, produtos favoritos e busca inteligente para filas que andam.</p>
+            </div>
+          </article>
+
+          <article class="feature-card reveal" data-delay="100">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
+            <h3>Estoque inteligente</h3>
+            <p>Alertas de ruptura, controle de validade e sugestão automática de compra baseada no seu giro de vendas.</p>
+          </article>
+
+          <article class="feature-card reveal" data-delay="200">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
+            <h3>Pagamentos integrados</h3>
+            <p>Crédito, débito, Pix, vale-alimentação e aproximação direto na maquininha, sem digitar valor duas vezes.</p>
+          </article>
+
+          <article class="feature-card reveal" data-delay="100">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></svg></div>
+            <h3>Relatórios em tempo real</h3>
+            <p>Curva ABC, ticket médio, horários de pico e margem por produto — no computador ou no celular.</p>
+          </article>
+
+          <article class="feature-card reveal" data-delay="200">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+            <h3>Fiscal sem dor de cabeça</h3>
+            <p>Emissão de NFC-e e SAT, contingência offline e envio automático do XML para o seu contador.</p>
+          </article>
+
+          <article class="feature-card reveal" data-delay="300">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M17 11l2 2 4-4"/></svg></div>
+            <h3>Turnos e operadores</h3>
+            <p>Abertura e fechamento de caixa por turno, sangria, suprimento e permissões por funcionário.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD SHOWCASE -->
+    <section class="section showcase">
+      <div class="container showcase__inner">
+        <div class="showcase__content reveal">
+          <span class="eyebrow eyebrow--light">Painel de gestão</span>
+          <h2 class="section__title section__title--light">Sua loja inteira em uma tela.</h2>
+          <p class="section__text section__text--light">Acompanhe o faturamento ao vivo, compare filiais e descubra quais produtos mais vendem em cada horário. Decisões baseadas em dados, não em achismo.</p>
+
+          <div class="tabs" role="tablist">
+            <button class="tab is-active" role="tab" aria-selected="true" data-tab="vendas">Vendas</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="estoque">Estoque</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="financeiro">Financeiro</button>
+          </div>
+
+          <ul class="check-list">
+            <li>Acesso pelo celular de qualquer lugar</li>
+            <li>Multiloja com consolidação automática</li>
+            <li>Exportação para Excel e para o contador</li>
+          </ul>
+        </div>
+
+        <div class="dashboard reveal reveal--right" data-delay="200">
+          <div class="dashboard__top">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="dashboard__url">app.polepos.com.br/painel</span>
+          </div>
+          <div class="dashboard__body">
+            <div class="kpis">
+              <div class="kpi"><small data-kpi-label="0">Faturamento</small><strong data-kpi-value="0">R$ 48.920</strong><em class="up" data-kpi-delta="0">+12%</em></div>
+              <div class="kpi"><small data-kpi-label="1">Ticket médio</small><strong data-kpi-value="1">R$ 27,40</strong><em class="up" data-kpi-delta="1">+4%</em></div>
+              <div class="kpi"><small data-kpi-label="2">Transações</small><strong data-kpi-value="2">1.786</strong><em class="up" data-kpi-delta="2">+9%</em></div>
+            </div>
+            <div class="chart">
+              <div class="chart__head">
+                <strong id="chartTitle">Vendas por hora</strong>
+                <span class="chart__legend"><i></i> Hoje</span>
+              </div>
+              <div class="chart__bars" id="chartBars"></div>
+            </div>
+            <div class="top-products">
+              <div class="tp"><span>Água mineral 500ml</span><div class="tp__bar"><i style="--w:92%"></i></div></div>
+              <div class="tp"><span>Energético 473ml</span><div class="tp__bar"><i style="--w:78%"></i></div></div>
+              <div class="tp"><span>Café expresso</span><div class="tp__bar"><i style="--w:64%"></i></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAQUININHAS -->
+    <section class="section hardware" id="maquininhas">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Maquininhas & hardware</span>
+          <h2 class="section__title">Escolha o equipamento ideal <span class="text-gradient">para o seu balcão</span></h2>
+          <p class="section__text">Integração nativa com as principais maquininhas do mercado. Ou use a nossa, com taxas negociadas para conveniências.</p>
+        </div>
+
+        <div class="hardware__grid">
+          <article class="hw-card reveal">
+            <div class="hw-card__img">
+              <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=800&q=80&auto=format&fit=crop" alt="Terminal POS de balcão com leitor de cartão" loading="lazy">
+              <span class="hw-card__tag">Mais vendido</span>
+            </div>
+            <div class="hw-card__body">
+              <h3>Pole Balcão</h3>
+              <p>Terminal fixo com tela de 10", leitor de cartão e impressora térmica. Perfeito para o caixa principal.</p>
+              <ul class="specs"><li>Tela touch 10"</li><li>NFC + chip</li><li>Wi-Fi e 4G</li></ul>
+            </div>
+          </article>
+
+          <article class="hw-card reveal" data-delay="100">
+            <div class="hw-card__img">
+              <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&q=80&auto=format&fit=crop" alt="Leitor de cartão por aproximação compacto" loading="lazy">
+            </div>
+            <div class="hw-card__body">
+              <h3>Pole Mini</h3>
+              <p>Leitor compacto via Bluetooth. Leve até a bomba de combustível ou ao cliente no estacionamento.</p>
+              <ul class="specs"><li>Bateria 1 dia</li><li>Aproximação</li><li>Bluetooth 5.0</li></ul>
+            </div>
+          </article>
+
+          <article class="hw-card reveal" data-delay="200">
+            <div class="hw-card__img">
+              <img src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?w=800&q=80&auto=format&fit=crop" alt="Vista de cima de balcão com tablet de vendas e pagamento por celular" loading="lazy">
+            </div>
+            <div class="hw-card__body">
+              <h3>Pole Tablet</h3>
+              <p>Transforme qualquer tablet Android ou iPad em frente de caixa completa, conectado ao seu estoque.</p>
+              <ul class="specs"><li>Android / iOS</li><li>Modo offline</li><li>Multiusuário</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stats__bg">
+        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1800&q=70&auto=format&fit=crop" alt="" class="parallax-bg" loading="lazy">
+      </div>
+      <div class="container stats__grid">
+        <div class="stat reveal"><strong><span class="counter" data-target="4200">0</span>+</strong><span>lojas ativas</span></div>
+        <div class="stat reveal" data-delay="100"><strong><span class="counter" data-target="38">0</span>M</strong><span>vendas por mês</span></div>
+        <div class="stat reveal" data-delay="200"><strong><span class="counter" data-target="99.9" data-decimals="1">0</span>%</strong><span>de disponibilidade</span></div>
+        <div class="stat reveal" data-delay="300"><strong><span class="counter" data-target="3">0</span>s</strong><span>tempo médio por venda</span></div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section steps" id="como-funciona">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Como funciona</span>
+          <h2 class="section__title">Do cadastro à primeira venda <span class="text-gradient">em menos de 1 dia</span></h2>
+        </div>
+
+        <div class="steps__wrap">
+          <div class="steps__line"><span id="stepsLineFill"></span></div>
+
+          <div class="step reveal">
+            <div class="step__num">01</div>
+            <div class="step__img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80&auto=format&fit=crop" alt="Notebook com gráficos de gestão" loading="lazy"></div>
+            <h3>Crie sua conta</h3>
+            <p>Cadastro em 5 minutos. Importamos seus produtos de planilha ou de outro sistema sem custo.</p>
+          </div>
+
+          <div class="step reveal" data-delay="150">
+            <div class="step__num">02</div>
+            <div class="step__img"><img src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=700&q=80&auto=format&fit=crop" alt="Atendente configurando terminal no balcão" loading="lazy"></div>
+            <h3>Conecte a maquininha</h3>
+            <p>Receba o equipamento pré-configurado ou conecte o seu. Nosso time faz a instalação remota.</p>
+          </div>
+
+          <div class="step reveal" data-delay="300">
+            <div class="step__num">03</div>
+            <div class="step__img"><img src="https://images.unsplash.com/photo-1601600576337-c1d8a0d1373c?w=700&q=80&auto=format&fit=crop" alt="Geladeira de bebidas de loja de conveniência" loading="lazy"></div>
+            <h3>Venda e acompanhe</h3>
+            <p>Comece a vender e veja tudo no painel em tempo real. Suporte humano 24h, 7 dias por semana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="section gallery">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Feito para o varejo de proximidade</span>
+          <h2 class="section__title">De postos a mercearias de bairro</h2>
+        </div>
+      </div>
+      <div class="gallery__grid">
+        <figure class="g-item g-item--tall reveal"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=800&q=80&auto=format&fit=crop" alt="Corredor de loja com prateleiras" loading="lazy"><figcaption>Conveniências</figcaption></figure>
+        <figure class="g-item reveal" data-delay="100"><img src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?w=800&q=80&auto=format&fit=crop" alt="Frutas organizadas em gôndola" loading="lazy"><figcaption>Hortifrútis</figcaption></figure>
+        <figure class="g-item reveal" data-delay="200"><img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80&auto=format&fit=crop" alt="Fachada de loja de bairro" loading="lazy"><figcaption>Lojas de bairro</figcaption></figure>
+        <figure class="g-item g-item--wide reveal" data-delay="100"><img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=1200&q=80&auto=format&fit=crop" alt="Corredor de mercado iluminado" loading="lazy"><figcaption>Mercados</figcaption></figure>
+        <figure class="g-item reveal" data-delay="200"><img src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?w=800&q=80&auto=format&fit=crop" alt="Placa de aberto na porta da loja" loading="lazy"><figcaption>Abertas 24h</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section class="section pricing" id="planos">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Planos</span>
+          <h2 class="section__title">Preço justo, <span class="text-gradient">sem surpresas</span></h2>
+          <div class="billing-toggle">
+            <span class="is-active" data-billing-label="monthly">Mensal</span>
+            <button class="switch" id="billingSwitch" aria-label="Alternar cobrança anual" aria-pressed="false"><span></span></button>
+            <span data-billing-label="yearly">Anual <em class="save">-20%</em></span>
+          </div>
+        </div>
+
+        <div class="pricing__grid">
+          <article class="plan reveal">
+            <h3>Essencial</h3>
+            <p class="plan__desc">Para quem está começando</p>
+            <div class="plan__price"><small>R$</small><span data-monthly="89" data-yearly="71">89</span><small>/mês</small></div>
+            <ul>
+              <li>1 caixa</li><li>Até 2.000 produtos</li><li>NFC-e ilimitada</li><li>Relatórios básicos</li><li>Suporte por chat</li>
+            </ul>
+            <a href="#contato" class="btn btn--outline btn--block">Começar grátis</a>
+          </article>
+
+          <article class="plan plan--featured reveal" data-delay="100">
+            <span class="plan__badge">Mais escolhido</span>
+            <h3>Profissional</h3>
+            <p class="plan__desc">Para conveniências em crescimento</p>
+            <div class="plan__price"><small>R$</small><span data-monthly="169" data-yearly="135">169</span><small>/mês</small></div>
+            <ul>
+              <li>Até 3 caixas</li><li>Produtos ilimitados</li><li>Estoque inteligente e validade</li><li>Maquininha integrada</li><li>App de gestão no celular</li><li>Suporte 24h</li>
+            </ul>
+            <a href="#contato" class="btn btn--primary btn--block">Começar grátis</a>
+          </article>
+
+          <article class="plan reveal" data-delay="200">
+            <h3>Rede</h3>
+            <p class="plan__desc">Para redes e franquias</p>
+            <div class="plan__price"><small>R$</small><span data-monthly="349" data-yearly="279">349</span><small>/mês</small></div>
+            <ul>
+              <li>Caixas ilimitados</li><li>Multiloja consolidado</li><li>Transferência entre filiais</li><li>API e integrações</li><li>Gerente de conta dedicado</li>
+            </ul>
+            <a href="#contato" class="btn btn--outline btn--block">Falar com vendas</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Depoimentos</span>
+          <h2 class="section__title">Quem usa, recomenda</h2>
+        </div>
+
+        <div class="slider reveal" id="slider">
+          <div class="slider__track" id="sliderTrack">
+            <blockquote class="testimonial">
+              <p>“Antes eu fechava o caixa em 40 minutos. Hoje são 5. E finalmente sei exatamente quanto lucro em cada produto da geladeira.”</p>
+              <footer>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&q=80&auto=format&fit=crop" alt="" loading="lazy">
+                <div><strong>Ricardo Menezes</strong><span>Conveniência Rota 116 · Curitiba</span></div>
+              </footer>
+            </blockquote>
+            <blockquote class="testimonial">
+              <p>“A integração com a maquininha acabou com os erros de digitação. Pix cai na hora e o relatório já mostra tudo separado.”</p>
+              <footer>
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&h=160&q=80&auto=format&fit=crop" alt="" loading="lazy">
+                <div><strong>Juliana Araújo</strong><span>Mercearia da Vila · Belo Horizonte</span></div>
+              </footer>
+            </blockquote>
+            <blockquote class="testimonial">
+              <p>“Tenho 6 lojas em postos e acompanho todas pelo celular. O alerta de estoque baixo salvou meu fim de semana várias vezes.”</p>
+              <footer>
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&q=80&auto=format&fit=crop" alt="" loading="lazy">
+                <div><strong>André Siqueira</strong><span>Rede Parada Certa · Campinas</span></div>
+              </footer>
+            </blockquote>
+            <blockquote class="testimonial">
+              <p>“Funciona mesmo quando a internet cai. Para uma loja 24h, isso não tem preço. O suporte de madrugada responde rápido.”</p>
+              <footer>
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=160&h=160&q=80&auto=format&fit=crop" alt="" loading="lazy">
+                <div><strong>Patrícia Lemos</strong><span>Express 24h · Recife</span></div>
+              </footer>
+            </blockquote>
+          </div>
+          <div class="slider__nav">
+            <button class="slider__btn" id="prevBtn" aria-label="Depoimento anterior"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+            <div class="slider__dots" id="sliderDots"></div>
+            <button class="slider__btn" id="nextBtn" aria-label="Próximo depoimento"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <div class="container faq__inner">
+        <div class="faq__side reveal">
+          <span class="eyebrow">Dúvidas frequentes</span>
+          <h2 class="section__title">Perguntas que sempre recebemos</h2>
+          <p class="section__text">Não encontrou o que procurava? Nosso time responde em minutos pelo chat.</p>
+          <div class="faq__img">
+            <img src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?w=800&q=80&auto=format&fit=crop" alt="Atendente sorrindo atrás do balcão" loading="lazy">
+          </div>
+        </div>
+
+        <div class="accordion reveal" data-delay="150">
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false">O sistema funciona sem internet?<span class="acc-icon"></span></button>
+            <div class="acc-body"><p>Sim. O Pole POS continua vendendo em modo offline e emite NFC-e em contingência. Quando a conexão volta, tudo é sincronizado automaticamente.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false">Posso usar a maquininha que já tenho?<span class="acc-icon"></span></button>
+            <div class="acc-body"><p>Na maioria dos casos, sim. Temos integração com as principais adquirentes do mercado. Consulte nosso time para confirmar o seu modelo.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false">Existe taxa de adesão ou fidelidade?<span class="acc-icon"></span></button>
+            <div class="acc-body"><p>Não. Você pode cancelar quando quiser, sem multa. A migração de dados e o treinamento inicial também são gratuitos.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false">Como funciona a emissão fiscal?<span class="acc-icon"></span></button>
+            <div class="acc-body"><p>Emitimos NFC-e e SAT (onde aplicável) direto no caixa. Os XMLs ficam armazenados por 5 anos e podem ser enviados automaticamente para o seu contador.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" aria-expanded="false">Meus dados estão seguros?<span class="acc-icon"></span></button>
+            <div class="acc-body"><p>Seus dados são criptografados, com backups diários e conformidade com a LGPD. Veja os detalhes na nossa <a href="privacidade.html">Política de Privacidade</a>.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / CONTATO -->
+    <section class="section cta" id="contato">
+      <div class="container">
+        <div class="cta__box reveal">
+          <div class="cta__bg">
+            <img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?w=1600&q=70&auto=format&fit=crop" alt="" loading="lazy">
+          </div>
+          <div class="cta__content">
+            <h2>Teste o Pole POS grátis por 14 dias</h2>
+            <p>Sem cartão de crédito. Nossa equipe entra em contato para configurar tudo com você.</p>
+          </div>
+          <form class="cta__form" id="leadForm" novalidate>
+            <div class="field">
+              <input type="text" id="nome" name="nome" placeholder=" " required autocomplete="name">
+              <label for="nome">Seu nome</label>
+            </div>
+            <div class="field">
+              <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
+              <label for="email">E-mail</label>
+            </div>
+            <div class="field">
+              <input type="tel" id="telefone" name="telefone" placeholder=" " required autocomplete="tel">
+              <label for="telefone">WhatsApp</label>
+            </div>
+            <label class="consent">
+              <input type="checkbox" id="consent" required>
+              <span>Li e concordo com a <a href="privacidade.html">Política de Privacidade</a>.</span>
+            </label>
+            <button type="submit" class="btn btn--primary btn--block btn--lg">
+              <span class="btn__label">Quero testar grátis</span>
+            </button>
+            <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#inicio" class="logo logo--light"><span class="logo-mark"></span><span>Pole<b>POS</b></span></a>
+        <p>Sistema de PDV e gestão para conveniências, mercearias e lojas de posto.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Produto</h4>
+        <a href="#recursos">Recursos</a><a href="#maquininhas">Maquininhas</a><a href="#planos">Planos</a><a href="#como-funciona">Como funciona</a>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <a href="#">Sobre nós</a><a href="#">Carreiras</a><a href="#">Blog</a><a href="#contato">Contato</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacidade.html">Política de Privacidade</a><a href="privacidade.html#cookies">Cookies</a><a href="privacidade.html#direitos">Seus direitos (LGPD)</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Pole POS. Todos os direitos reservados.</span>
+      <span>Feito com cuidado para o varejo brasileiro.</span>
+    </div>
+  </footer>
+
+  <a href="#inicio" class="to-top" id="toTop" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+
+  <!-- Cookie banner -->
+  <div class="cookie" id="cookieBanner" role="dialog" aria-label="Aviso de cookies">
+    <p>Usamos cookies para melhorar sua experiência. Saiba mais na nossa <a href="privacidade.html#cookies">Política de Privacidade</a>.</p>
+    <div class="cookie__actions">
+      <button class="btn btn--ghost btn--sm" data-cookie="reject">Recusar</button>
+      <button class="btn btn--primary btn--sm" data-cookie="accept">Aceitar</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
